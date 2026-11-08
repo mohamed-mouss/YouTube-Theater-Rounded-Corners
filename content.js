@@ -1,4 +1,4 @@
-﻿(function() {
+(function() {
   'use strict';
 
   if (!window.location.pathname.startsWith('/watch')) return;
@@ -89,7 +89,9 @@
 
     const html = document.documentElement;
     const isTheater = html.classList.contains('yt-theater-curved');
-    const isFullscreen = html.classList.contains('yt-fullscreen-curved');
+    const isFullscreen =
+      html.classList.contains('yt-fullscreen-curved') ||
+      checkFullscreenMode();
     const shouldShow = isTheater && !isFullscreen;
 
     if (!shouldShow) {
@@ -158,9 +160,9 @@
 
   function checkFullscreenMode() {
     if (document.fullscreenElement || document.webkitFullscreenElement) return true;
-    const player = document.querySelector('#movie_player');
-    if (player && player.classList.contains('ytp-fullscreen')) return true;
-    return false;
+    return !!document.querySelector(
+      '#movie_player.ytp-fullscreen, .html5-video-player.ytp-fullscreen, .ytp-fullscreen'
+    );
   }
 
   // ============================================================

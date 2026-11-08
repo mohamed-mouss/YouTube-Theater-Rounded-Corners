@@ -2,7 +2,7 @@
   <header>
     <h1>Youtube-theater-curved</h1>
     <p class="tagline">
-      Add 20px rounded corners, blended black bars, and a customizable control bar
+      Add from 5px to 40px rounded corners, blended black bars, and a customizable control bar
       to YouTube's theater mode and fullscreen. Now with screenshot, loop, and
       theater-remember tools.
     </p>
@@ -13,7 +13,11 @@
       <span class="badge chrome">Chrome Compatible</span>
     </div>
   </header>
-
+<nav>
+  <a href="#features">✨ Features</a> ·
+  <a href="#installation">🚀 Installation</a> ·
+  <a href="#technical">🛠️ Technical Details</a>
+</nav>
   <!-- SCREENSHOTS -->
   <h2 id="screenshots">📸 Screenshots</h2>
    <div class="screenshot-grid">

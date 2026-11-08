@@ -1,0 +1,435 @@
+/* =====================================================
+   ROOT VARIABLES
+   ===================================================== */
+:root {
+  --yt-curved-radius: 20px;
+  --yt-curved-orange: #ff7a00;
+}
+
+html.yt-theater-curved,
+html.yt-theater-curved body {
+  overflow-x: clip !important;
+}
+
+/* =====================================================
+   1. THEATER MODE — VIDEO ROUNDING & CONTAINER
+   ===================================================== */
+
+html.yt-theater-curved #movie_player,
+html.yt-theater-curved .html5-video-player {
+  border-radius: 0 !important;
+  overflow: visible !important;
+  background: transparent !important;
+}
+
+html.yt-theater-curved .html5-video-container {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: visible !important;
+}
+
+html.yt-theater-curved video {
+  border-radius: var(--yt-curved-radius) !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  width: auto !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  background: transparent !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+@media (orientation: portrait) {
+  html.yt-theater-curved #player-theater-container {
+    margin-top: 20px !important;
+  }
+
+  html.yt-theater-curved .html5-video-container {
+    border-radius: var(--yt-curved-radius) !important;
+    overflow: hidden !important;
+  }
+
+  html.yt-theater-curved video {
+    clip-path: inset(0 round var(--yt-curved-radius)) !important;
+  }
+}
+
+html.yt-theater-curved .ytp-cued-thumbnail-overlay,
+html.yt-theater-curved .ytp-gradient-top,
+html.yt-theater-curved .ytp-gradient-bottom {
+  display: none !important;
+}
+
+/* =====================================================
+   2. HEADER FIXES FOR LIGHT MODE (THEATER)
+   ===================================================== */
+
+html:not([dark]).yt-theater-curved ytd-masthead,
+html:not([dark]).yt-theater-curved ytd-masthead.dark,
+html:not([dark]).yt-theater-curved ytd-masthead[theater] {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e5e5e5 !important;
+}
+
+html:not([dark]).yt-theater-curved ytd-masthead #yt-logo-red-svg #youtube-red-paths path,
+html:not([dark]).yt-theater-curved ytd-masthead #yt-logo-svg #youtube-paths path,
+html:not([dark]).yt-theater-curved ytd-masthead #yt-logo-updated-svg #youtube-paths path {
+  fill: #282828 !important;
+}
+
+html:not([dark]).yt-theater-curved ytd-masthead .yt-icons-ext,
+html:not([dark]).yt-theater-curved ytd-masthead .external-icon,
+html:not([dark]).yt-theater-curved ytd-masthead yt-icon,
+html:not([dark]).yt-theater-curved ytd-masthead svg:not([fill]) {
+  color: #0f0f0f !important;
+  fill: #0f0f0f !important;
+}
+
+html:not([dark]).yt-theater-curved ytd-masthead #search-input input,
+html:not([dark]).yt-theater-curved ytd-masthead input#search {
+  background-color: #ffffff !important;
+  color: #0f0f0f !important;
+  border: 1px solid #cccccc !important;
+  border-radius: 20px !important;
+  padding-left: 12px !important;
+}
+html:not([dark]).yt-theater-curved ytd-masthead #search-input input::placeholder,
+html:not([dark]).yt-theater-curved ytd-masthead input#search::placeholder {
+  color: #888888 !important;
+}
+
+html:not([dark]).yt-theater-curved ytd-masthead #search-container,
+html:not([dark]).yt-theater-curved ytd-masthead .ytd-searchbox-spt {
+  background: #f0f0f0 !important;
+  border-color: #cccccc !important;
+}
+
+html:not([dark]).yt-theater-curved ytd-masthead #search-icon svg {
+  fill: #0f0f0f !important;
+}
+
+html:not([dark]).yt-theater-curved ytd-masthead .ytd-topbar-menu-button-renderer svg,
+html:not([dark]).yt-theater-curved ytd-masthead .ytd-button-renderer svg,
+html:not([dark]).yt-theater-curved ytd-masthead .yt-icon {
+  color: #0f0f0f !important;
+  fill: #0f0f0f !important;
+}
+
+html:not([dark]).yt-theater-curved ytd-masthead #avatar img {
+  border: 1px solid #e5e5e5 !important;
+}
+
+html:not([dark]).yt-theater-curved ytd-masthead #country-code {
+  color: #0f0f0f !important;
+}
+
+html:not([dark]).yt-theater-curved ytd-masthead ytd-button-renderer[button-type="CREATE"],
+html:not([dark]).yt-theater-curved ytd-masthead #create-button,
+html:not([dark]).yt-theater-curved ytd-masthead [aria-label="Create"],
+html:not([dark]).yt-theater-curved ytd-masthead [aria-label*="Create"] {
+  color: #0f0f0f !important;
+}
+html:not([dark]).yt-theater-curved ytd-masthead ytd-button-renderer[button-type="CREATE"] *,
+html:not([dark]).yt-theater-curved ytd-masthead #create-button *,
+html:not([dark]).yt-theater-curved ytd-masthead [aria-label="Create"] *,
+html:not([dark]).yt-theater-curved ytd-masthead [aria-label*="Create"] * {
+  color: #0f0f0f !important;
+}
+html:not([dark]).yt-theater-curved ytd-masthead ytd-button-renderer[button-type="CREATE"] yt-icon,
+html:not([dark]).yt-theater-curved ytd-masthead #create-button yt-icon,
+html:not([dark]).yt-theater-curved ytd-masthead [aria-label="Create"] yt-icon,
+html:not([dark]).yt-theater-curved ytd-masthead [aria-label*="Create"] yt-icon {
+  color: #0f0f0f !important;
+  fill: #0f0f0f !important;
+}
+html:not([dark]).yt-theater-curved ytd-masthead .yt-button,
+html:not([dark]).yt-theater-curved ytd-masthead .yt-button-text,
+html:not([dark]).yt-theater-curved ytd-masthead .yt-button-text span {
+  color: #0f0f0f !important;
+}
+html:not([dark]).yt-theater-curved ytd-masthead yt-icon[icon="add"] {
+  color: #0f0f0f !important;
+  fill: #0f0f0f !important;
+}
+
+/* =====================================================
+   3. HIDE ANNOTATIONS & INFO CARDS (THEATER)
+   ===================================================== */
+
+html.yt-theater-curved .ytp-annotation,
+html.yt-theater-curved .ytp-annotation-container,
+html.yt-theater-curved .ytp-cards-teaser,
+html.yt-theater-curved .ytp-info-cards,
+html.yt-theater-curved .ytp-info-cards-container {
+  display: none !important;
+}
+
+/* =====================================================
+   4. FULLSCREEN MODE
+   ===================================================== */
+
+html.yt-fullscreen-curved .html5-video-container {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+html.yt-fullscreen-curved #movie_player,
+html.yt-fullscreen-curved .html5-video-player {
+  background: #000000 !important;
+}
+
+html.yt-fullscreen-curved video {
+  border-radius: var(--yt-curved-radius) !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  width: auto !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  margin: auto !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  display: block !important;
+}
+
+/* =====================================================
+   5. CUSTOM CONTROL BAR — fixed, outside player tree
+   ===================================================== */
+
+#yt-curved-bar {
+  display: none;                     /* toggled by JS */
+  position: fixed !important;        /* ← changed from absolute */
+  top: 100px;                        /* fallback until JS updates it */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(59, 57, 57, 0.88);
+  width: fit-content;
+  max-width: 90%;
+  box-sizing: border-box;
+  z-index: 2147483647 !important;
+  font-family: Roboto, Arial, sans-serif;
+  transition: opacity 0.25s ease, background 0.2s ease;
+  opacity: 0.9;
+  pointer-events: auto;
+  flex-direction: row;
+}
+
+html.yt-fullscreen-curved #yt-curved-bar {
+  display: none !important;
+}
+
+#yt-curved-bar:hover {
+  opacity: 1;
+  background: rgba(20, 20, 20, 0.95);
+}
+
+html:not([dark]) #yt-curved-bar {
+  background: rgba(240, 240, 240, 0.95);
+}
+html:not([dark]) #yt-curved-bar:hover {
+  background: rgba(240, 240, 240, 1);
+}
+
+.yt-curved-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  color: #e0e0e0;
+  padding: 0;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+.yt-curved-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+html:not([dark]) .yt-curved-btn {
+  color: #444;
+}
+html:not([dark]) .yt-curved-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: #0f0f0f;
+}
+
+.yt-curved-btn:active {
+  transform: scale(0.9);
+}
+
+.yt-curved-btn.active {
+  background: var(--yt-curved-orange);
+  color: #fff;
+}
+.yt-curved-btn.active:hover {
+  background: var(--yt-curved-orange);
+  color: #fff;
+  opacity: 0.9;
+}
+
+.yt-curved-btn svg {
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+}
+
+.yt-curved-settings-popup {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 11px;
+  color: #ddd;
+  margin-left: 4px;
+}
+
+html:not([dark]) .yt-curved-settings-popup {
+  background: rgba(0, 0, 0, 0.06);
+  color: #333;
+}
+
+.yt-curved-settings-popup.open {
+  display: flex;
+}
+
+.yt-curved-settings-popup label {
+  white-space: nowrap;
+}
+
+.yt-curved-settings-popup input[type="range"] {
+  width: 90px;
+  accent-color: var(--yt-curved-orange);
+  cursor: pointer;
+}
+
+.yt-curved-settings-popup .yt-curved-radius-val {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--yt-curved-orange);
+  font-size: 11px;
+}
+
+.yt-curved-toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  z-index: 999999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.yt-curved-toast.show {
+  opacity: 1;
+}
+
+/* =====================================================
+   6. AMBIENT MODE
+   ===================================================== */
+
+html.yt-theater-curved .player-container-background-image,
+html.yt-theater-curved #cinematics,
+html.yt-theater-curved #cinematics-container {
+  display: none !important;
+}
+
+html[dark].yt-theater-curved.yt-ambient-on .player-container-background-image,
+html[dark].yt-theater-curved.yt-ambient-on #cinematics {
+  display: block !important;
+  width: 100% !important;
+  height: calc(100% + 224px) !important;
+  max-width: none !important;
+  max-height: none !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  overflow: visible !important;
+  filter: blur(30px) !important;
+  translate: 0 -64px !important;
+}
+
+html[dark].yt-theater-curved.yt-ambient-on #cinematics-container {
+  display: block !important;
+}
+
+html[dark].yt-theater-curved.yt-ambient-on .player-container-background-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+html[dark].yt-theater-curved.yt-ambient-on .player-container-background-image,
+html[dark].yt-theater-curved.yt-ambient-on #cinematics {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0,
+    #000 calc(100% - 160px),
+    transparent 100%
+  ) !important;
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0,
+    #000 calc(100% - 160px),
+    transparent 100%
+  ) !important;
+}
+
+html.yt-theater-curved #full-bleed-container,
+html.yt-theater-curved #player-full-bleed-container {
+  overflow: visible !important;
+  background: transparent !important;
+}
+
+html.yt-theater-curved #movie_player {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+html[dark].yt-theater-curved.yt-ambient-on #masthead-container,
+html[dark].yt-theater-curved.yt-ambient-on #masthead,
+html[dark].yt-theater-curved.yt-ambient-on ytd-masthead,
+html[dark].yt-theater-curved.yt-ambient-on ytd-masthead #background,
+html[dark].yt-theater-curved.yt-ambient-on ytd-masthead #container {
+  background-color: rgba(0, 0, 0, 0) !important;
+  background-image: none !important;
+  border-color: transparent !important;
+}

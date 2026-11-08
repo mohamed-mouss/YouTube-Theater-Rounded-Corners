@@ -1,0 +1,28 @@
+﻿{
+  "manifest_version": 3,
+  "name": "YouTube Theater Mode Curved Corners",
+  "version": "4.1",
+  "description": "Curved corners, blended bars, custom control bar, screenshot, loop, and remember theater mode.",
+  "permissions": ["storage"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "YT Curved",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "css": ["styles.css"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
